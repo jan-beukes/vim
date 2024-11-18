@@ -1,9 +1,11 @@
 -- Options
 -- See `:help vim.opt`
 --
+-- Globals
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
---vim.diagnostic.enable(false)
+vim.g.cmptoggle = true
+vim.diagnostic.enable(false)
 
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
@@ -64,10 +66,9 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
--- syntax highlight autocmp
-vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
-  pattern = '*.jlsp',
-  command = 'set filetype=clojure',
+-- remove stupid autocomment
+vim.api.nvim_create_autocmd('BufWinEnter', {
+  command = 'set formatoptions-=cro',
 })
 
 -- Includes

@@ -1,9 +1,12 @@
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
+-- Toggle Diagnostic
 vim.keymap.set('n', '<leader>td', function()
   vim.diagnostic.enable(not vim.diagnostic.is_enabled())
-end, { silent = true, noremap = true })
+end, { desc = 'toggle diagnostic' })
+-- Toggle nvim-cmp
+vim.keymap.set('n', '<leader>ta', '<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<CR>', { desc = 'toggle nvim-cmp' })
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
