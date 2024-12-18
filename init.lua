@@ -1,6 +1,6 @@
 -- Options
 -- See `:help vim.opt`
---
+
 -- Globals
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
