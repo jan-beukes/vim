@@ -19,14 +19,21 @@ return {
       vim.api.nvim_create_user_command('PeekClose', require('peek').close, {})
     end,
   },
-  -- File explore
+  -- Oil
   {
     'stevearc/oil.nvim',
     ---@module 'oil'
     ---@type oil.SetupOpts
-    opts = {},
     -- Optional dependencies
     dependencies = { { 'echasnovski/mini.icons', opts = {} } },
+    opts = {
+      columns = {
+        'icon',
+      },
+      view_options = {
+        show_hidden = true,
+      },
+    },
     -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
   },
 }
